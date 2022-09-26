@@ -1,8 +1,15 @@
-<h1>Information on <%= @doctor.name %></h1>
-<h3>Specialty: <%= @doctor.specialty %></h3>
-<h3>University: <%= @doctor.university %></h3>
-<h3>Employed at: <%= @doctor.hospital.name %></h3>
-<h3>Current patients: 
-<ul><% @doctor.patients.each do |patient| %>
-<li><%= patient.name %></li>
-<% end %></ul></h3>
+<div id="doctor-info">
+  <h1>Information on <%= @doctor.name %></h1>
+  <h3>Specialty: <%= @doctor.specialty %></h3>
+  <h3>University: <%= @doctor.university %></h3>
+  <h3>Employed at: <%= @doctor.hospital.name %></h3>
+</div>
+<div id="doctor-patient-info">
+  <h3>Current patients: 
+  <ul><% @doctor.patients.each do |patient| %>
+  <div id="patient-<%= patient.id %>">
+    <li><%= patient.name %> <%= link_to "remove from caseload", "#{@doctor.id}/doctors_patients/#{patient.id}", method: :delete%></li>
+
+  </div>
+  <% end %></ul></h3>
+</div>
