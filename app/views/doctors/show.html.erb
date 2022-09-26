@@ -8,7 +8,8 @@
   <h3>Current patients: 
   <ul><% @doctor.patients.each do |patient| %>
   <div id="patient-<%= patient.id %>">
-    <li><%= patient.name %></li>
+    <li><%= patient.name %> <%= link_to "remove from caseload", "#{@doctor.id}/doctors_patients/#{patient.id}"%></li>
+
   </div>
   <% end %></ul></h3>
 </div>
