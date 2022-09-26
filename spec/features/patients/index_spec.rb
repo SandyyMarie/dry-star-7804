@@ -24,11 +24,12 @@ RSpec.describe 'As a visitor, when I visit the Patients index page' do
 # I see the names of all adult patients (age is greater than 18),
 # And I see the names are in ascending alphabetical order (A - Z, you do not need to account for capitalization)
 
-it 'shows the name of all adult patients (18+) and I see their names in ascending alphabetical order (A-Z)' do
-  visit patients_path
+  it 'shows the name of all adult patients (18+) and I see their names in ascending alphabetical order (A-Z)US#3' do
+    visit patients_path
 
-  expect(page).to have_content(@patient_2.name)
-  expect(page).to have_content(@patient_1.name)
-  expect(page).to have_content(@patient_3.name)
-  expect(page).to_not have_content(@patient_4.name)  
+    expect(page).to have_content(@patient_2.name)
+    expect(page).to have_content(@patient_1.name)
+    expect(page).to have_content(@patient_3.name)
+    expect(page).to_not have_content(@patient_4.name)  
+  end
 end
