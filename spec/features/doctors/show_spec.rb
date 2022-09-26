@@ -15,7 +15,6 @@ RSpec.describe 'As a visitor, when I visit the Doctors show page' do
 
     @doctor_3 = @hospital_2.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
     @patient_4 = @doctor_3.patients.create!(name: "Zola Shepherd", age: 2)
-    require 'pry'; binding.pry
   end
 
   it "shows all the given doctors information including: name/specialy/university (US1)" do
