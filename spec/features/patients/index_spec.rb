@@ -30,6 +30,8 @@ RSpec.describe 'As a visitor, when I visit the Patients index page' do
     expect(page).to have_content(@patient_2.name)
     expect(page).to have_content(@patient_1.name)
     expect(page).to have_content(@patient_3.name)
+    expect(@patient_2.name).to appear_before(@patient_1.name)
+    expect(@patient_1.name).to appear_before(@patient_3.name)
     expect(page).to_not have_content(@patient_4.name)  
   end
 end
